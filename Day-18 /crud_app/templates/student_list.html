@@ -1,0 +1,38 @@
+{% extends 'master/base.html' %}
+
+{% block title_block %}
+  Student_list
+{% endblock %}
+
+{% block content %}
+<a class="btn btn-primary" href="{% url 'add_student' %}" role="button">ADD STUDENT</a>
+  <div class="table-responsive">
+    <table class="table table-primary">
+      <thead>
+        <tr>
+          <th scope="col">SL</th>
+          <th scope="col">Name</th>
+          <th scope="col">Address</th>
+          <th scope="col">Email</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for student in student_data %}
+          <tr class="">
+            <td scope="row">{{forloop.counter}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.address}}</td>
+            <td>{{student.email}}</td>
+            <td>
+              <a href="{% url 'student_info' student.id %}" class="btn btn-primary">View</a>
+              <a href="{% url 'edit_student' student.id %}" class="btn btn-outline-secondary">Edit</a>
+              <a href="{% url 'delete_student' student.id %}" class="btn btn-danger">Delete</a>
+            </td>
+
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

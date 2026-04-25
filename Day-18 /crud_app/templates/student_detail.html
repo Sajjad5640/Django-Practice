@@ -1,0 +1,18 @@
+{% extends 'master/base.html' %}
+
+{% block title_block %}
+  view_student_detail
+{% endblock %}
+
+{% block content %}
+<h1>Teacher_info</h1>
+
+  <div class="card" style="width: 18rem;">
+
+    <div class="card-body">
+      <h5 class="card-title">{{ student_data.name }}</h5>
+      <p class="card-text">{{ student_data.address }}</p>
+      <p class="card-text">{{ student_data.email }}</p>
+    </div>
+  </div>
+{% endblock %}
