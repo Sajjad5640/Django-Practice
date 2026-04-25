@@ -1,0 +1,30 @@
+{% extends 'master/base.html' %}
+
+
+       {% block title_block %}
+        Exam
+
+        {% endblock title_block %}
+
+    {% block content %}
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Subject</th>
+      <th scope="col">Date</th>
+      <th scope="col">Mark</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for exam in exam_data %}
+    <tr>
+      <td>{{exam.subject}}</td>
+      <td>{{exam.date}}</td>
+      <td>{{exam.total_marks}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+    {% endblock content %}

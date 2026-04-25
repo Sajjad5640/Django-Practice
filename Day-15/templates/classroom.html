@@ -1,0 +1,31 @@
+{% extends 'master/base.html' %}
+
+
+       {% block title_block %}
+        Classroom
+
+        {% endblock title_block %}
+
+    {% block content %}
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Room Number</th>
+      <th scope="col">Capacity</th>
+      <th scope="col">Building</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for room in classroom_data %}
+    <tr>
+      <td>{{room.room_number}}</td>
+      <td>{{room.capacity}}</td>
+      <td>{{room.building}}</td>
+
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+    {% endblock content %}

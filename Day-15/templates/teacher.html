@@ -1,0 +1,30 @@
+{% extends 'master/base.html' %}
+
+
+       {% block title_block %}
+        Teacher
+
+        {% endblock title_block %}
+
+    {% block content %}
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for teacher in teacher_data %}
+    <tr>
+      <td>{{teacher.name}}</td>
+      <td>{{teacher.email}}</td>
+      <td>{{teacher.address}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+    {% endblock content %}

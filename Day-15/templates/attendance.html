@@ -1,0 +1,30 @@
+{% extends 'master/base.html' %}
+
+
+       {% block title_block %}
+        Attendance
+
+        {% endblock title_block %}
+
+    {% block content %}
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Date</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for att in attendance_data %}
+    <tr>
+      <td>{{att.student_name}}</td>
+      <td>{{att.date}}</td>
+      <td>{{att.status}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+    {% endblock content %}

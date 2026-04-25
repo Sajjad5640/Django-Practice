@@ -1,0 +1,32 @@
+{% extends 'master/base.html' %}
+
+{% block title_block %}
+  add-student
+{% endblock %}
+
+<div class="container">
+  {% block content %}
+    <h1>Add Student Information</h1>
+    <form method="POST">
+        {% csrf_token %}
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" />
+
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Email</label>
+        <input type="email" class="form-control" name='email' id="exampleInputPassword1" />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Address</label>
+        <input type="text" class="form-control" name='address' id="exampleInputPassword1" />
+      </div>
+        <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Admission Date</label>
+        <input type="date" class="form-control" name='admission_date' id="exampleInputPassword1" />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  {% endblock %}
+</div>

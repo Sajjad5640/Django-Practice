@@ -1,0 +1,37 @@
+{% extends 'master/base.html' %}
+
+
+{% block title_block %}
+    Student-List
+{% endblock title_block %}
+
+{% block content %}
+
+  <a class="btn btn-primary" href="{% url 'add-student' %}" role="button">ADD STUDENT</a>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Sl</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Address</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+    {% for student in student_data %}
+        <tr>
+      <th>{{forloop.counter}}</th>
+      <td>{{student.name}}</td>
+      <td>{{student.email}}</td>
+      <td>{{student.address}}</td>
+
+    </tr>
+    {% endfor %}
+        
+
+
+  </tbody>
+</table>
+{% endblock content %}
