@@ -1,0 +1,38 @@
+{% extends 'master/base.html' %}
+
+{% block title %}
+  Products
+{% endblock %}
+
+{% block content %}
+<a class="btn btn-primary" href="{% url 'add_product' %}" role="button">ADD-Product</a>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">SL</th>
+        <th scope="col">Name</th>
+        <th scope="col">Image</th>
+        <th scope="col">Product-Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for product in product_data %}
+        <tr>
+          <th scope="row">.{{ forloop.counter }}</th>
+          <td>{{ product.name }}</td>
+          <td>
+
+            {% if product.image %}
+            <img src="{{product.image.url}}" width="24px" alt="" srcset="">
+            {% else %}
+            <p>No Preview</p>
+
+            {% endif %}
+
+          </td>
+          <td>{{ product.product_price }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
