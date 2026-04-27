@@ -16,6 +16,7 @@ class ProductModel(models.Model):
     image = models.ImageField(upload_to='media/product_image',null=True, blank=True)
     qty = models.PositiveIntegerField(null=True)
     total_amount = models.FloatField(null=True)
+    product_date = models.DateField(null=True)
 
     def __str__(self):
         return self.name

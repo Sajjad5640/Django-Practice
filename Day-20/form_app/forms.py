@@ -6,3 +6,9 @@ class ProductForm (forms.ModelForm):
         model = ProductModel
         fields = "__all__"
         exclude = ['total_amount']
+        widgets = {
+            'product_date':forms.DateInput(attrs={
+            "class": "form-control",
+            "type": "date"
+            })
+        }
